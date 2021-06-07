@@ -1,5 +1,9 @@
 package com.asesoftware.semilla.ejercicio.repository;
 
-public interface IComercioRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.asesoftware.semilla.ejercicio.entity.ComercioEntity;
+
+public interface IComercioRepository extends JpaRepository<ComercioEntity, Integer> {
 
 }
