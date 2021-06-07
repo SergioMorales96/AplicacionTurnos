@@ -17,7 +17,7 @@ public class ComercioEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_comercio")
-	private Integer id_comercio;
+	private Integer id;
 	
 	@Column(name = "nom_comercio")
 	private String nom_comercio;

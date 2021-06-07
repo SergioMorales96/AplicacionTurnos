@@ -7,5 +7,7 @@ import com.asesoftware.semilla.ejercicio.entity.ComercioEntity;
 public interface IComercioService {
 	
 	public List<ComercioEntity> getAll();
+	
+	public ComercioEntity getComercioById(Integer id);
 
 }
