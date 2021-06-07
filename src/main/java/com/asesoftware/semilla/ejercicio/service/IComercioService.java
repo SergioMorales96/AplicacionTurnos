@@ -9,5 +9,7 @@ public interface IComercioService {
 	public List<ComercioEntity> getAll();
 	
 	public ComercioEntity getComercioById(Integer id);
+	
+	public ComercioEntity createComercio(ComercioEntity comercioEntity);
 
 }

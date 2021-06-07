@@ -31,6 +31,16 @@ public class ComercioService implements IComercioService{
 			return null;
 		}
 		
+	}
+	
+	@Override
+	public ComercioEntity createComercio(ComercioEntity comercioEntity) {
+	
+		try {
+			return comercioRepository.save(comercioEntity);
+		}catch (Exception e) {
+			return null;
+		}
 		
 	}
 
