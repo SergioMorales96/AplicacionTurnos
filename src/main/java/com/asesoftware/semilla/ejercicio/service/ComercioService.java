@@ -30,7 +30,6 @@ public class ComercioService implements IComercioService{
 		}else {
 			return null;
 		}
-		
 	}
 	
 	@Override
