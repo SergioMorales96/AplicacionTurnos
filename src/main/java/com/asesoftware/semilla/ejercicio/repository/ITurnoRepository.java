@@ -1,5 +1,8 @@
 package com.asesoftware.semilla.ejercicio.repository;
 
-public interface ITurnoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.asesoftware.semilla.ejercicio.entity.TurnoEntity;
+
+public interface ITurnoRepository extends JpaRepository<TurnoEntity, Integer>{
 
 }

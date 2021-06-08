@@ -1,5 +1,8 @@
 package com.asesoftware.semilla.ejercicio.service;
 
-public class TurnoService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class TurnoService implements ITurnoService{
 
 }
