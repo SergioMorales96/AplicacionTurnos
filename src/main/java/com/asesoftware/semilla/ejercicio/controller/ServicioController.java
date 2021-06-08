@@ -50,6 +50,19 @@ public class ServicioController {
 	}
 	
 	// Editar
+	
+	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")
+	public ServicioEntity editarServicio(@RequestBody ServicioEntity entity) {
+		
+		return servicioService.updateServicio(entity);
+	}
+	
 	// Eliminar
+	
+	@GetMapping(path = "/delete/{id}")
+	public void eliminarServicio(@PathVariable Integer id) {
+		
+		servicioService.deleteServicio(id);
+	}
 
 }

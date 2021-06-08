@@ -42,5 +42,18 @@ public class ServicioService implements IServicioService{
 		}
 		
 	}
+	
+	@Override
+	public ServicioEntity updateServicio(ServicioEntity servicioEntity) {
+	
+		return servicioRepository.save(servicioEntity);
+	}
+
+	@Override
+	public void deleteServicio(Integer id) {
+		// TODO Auto-generated method stub
+		servicioRepository.deleteById(id);
+		
+	}
 
 }
