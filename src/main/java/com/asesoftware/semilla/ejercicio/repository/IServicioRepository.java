@@ -1,5 +1,8 @@
 package com.asesoftware.semilla.ejercicio.repository;
 
-public interface IServicioRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.asesoftware.semilla.ejercicio.entity.ServicioEntity;
+
+public interface IServicioRepository extends JpaRepository<ServicioEntity, Integer>{
 
 }
