@@ -1,13 +1,13 @@
 package com.asesoftware.semilla.ejercicio.entity;
 
-import java.sql.Date;
+import java.sql.Time;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
@@ -24,13 +24,13 @@ public class ServicioEntity {
 	private String nom_servicio;
 	
 	@Column(name = "hora_apertura")
-	private Date  hora_apertura;
+	private Time  hora_apertura;
 	
 	@Column(name = "hora_cierre")
-	private Date hora_cierre;
+	private Time hora_cierre;
 	
 	@Column(name = "duracion")
-	private Date duracion;
+	private Time duracion;
 	
 	@Column(name = "fk_comercio")
 	private String servicioasociado;

@@ -22,7 +22,7 @@ public class ServicioController {
 	
 	// Listar Todo
 	
-	@GetMapping(path = "/todos")
+	@GetMapping(path = "/all")
 	public List<ServicioEntity> consultarTodos(){
 		return servicioService.getAll();
 	}
