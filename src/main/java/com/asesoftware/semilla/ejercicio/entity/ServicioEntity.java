@@ -21,13 +21,13 @@ public class ServicioEntity {
 	private Integer id;
 	
 	@Column(name = "nom_servicio")
-	private String nomservicio;
+	private String nom_servicio;
 	
 	@Column(name = "hora_apertura")
-	private Date  horaapertura;
+	private Date  hora_apertura;
 	
 	@Column(name = "hora_cierre")
-	private Date horacierre;
+	private Date hora_cierre;
 	
 	@Column(name = "duracion")
 	private Date duracion;

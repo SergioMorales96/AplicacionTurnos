@@ -9,5 +9,7 @@ public interface IServicioService {
 	public List<ServicioEntity> getAll();
 	
 	public ServicioEntity getServicioById(Integer id);
+	
+	public ServicioEntity createServicio(ServicioEntity servicioEntity);
 
 }

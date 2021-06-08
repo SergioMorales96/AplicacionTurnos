@@ -31,5 +31,16 @@ public class ServicioService implements IServicioService{
 			return null;
 		}
 	}
+	
+	@Override
+	public ServicioEntity createServicio(ServicioEntity servicioEntity) {
+	
+		try {
+			return servicioRepository.save(servicioEntity);
+		}catch (Exception e) {
+			return null;
+		}
+		
+	}
 
 }
