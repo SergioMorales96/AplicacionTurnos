@@ -43,5 +43,18 @@ public class ComercioService implements IComercioService{
 		}
 		
 	}
+	
+	@Override
+	public ComercioEntity updateComercio(ComercioEntity comercioEntity) {
+	
+		return comercioRepository.save(comercioEntity);
+	}
+	
+	@Override
+	public void deleteComercio(Integer id) {
+
+		comercioRepository.deleteById(id);
+	}
+	
 
 }

@@ -50,6 +50,19 @@ public class ComercioController {
 	}
 	
 	// Editar
+	
+	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")
+	public ComercioEntity editarComercio(@RequestBody ComercioEntity entity) {
+		
+		return comercioService.updateComercio(entity);
+	}
+	
 	// Eliminar
+	
+	@GetMapping(path = "/delete/{id}")
+	public void eliminarComercio(@PathVariable Integer id) {
+		
+		comercioService.deleteComercio(id);
+	}
 
 }

@@ -11,5 +11,9 @@ public interface IComercioService {
 	public ComercioEntity getComercioById(Integer id);
 	
 	public ComercioEntity createComercio(ComercioEntity comercioEntity);
+	
+	public ComercioEntity updateComercio(ComercioEntity comercioEntity);
+	
+	public void deleteComercio(Integer id);
 
 }
