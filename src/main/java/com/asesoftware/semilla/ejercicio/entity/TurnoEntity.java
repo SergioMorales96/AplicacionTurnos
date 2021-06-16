@@ -1,13 +1,15 @@
 package com.asesoftware.semilla.ejercicio.entity;
 
 import java.sql.Time;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.Data;
 
 @Data
@@ -21,7 +23,8 @@ public class TurnoEntity {
 	private Integer id;
 	
 	@Column(name = "fecha_turno")
-	private Time fecha_turno;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date fecha_turno;
 	
 	@Column(name = "hora_inicio")
 	private Time hora_inicio;

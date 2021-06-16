@@ -2,7 +2,6 @@ package com.asesoftware.semilla.ejercicio.entity;
 
 import java.sql.Time;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
