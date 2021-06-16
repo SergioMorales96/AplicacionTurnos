@@ -11,7 +11,7 @@ public interface IComercioMapper {
 	
 	public ComercioEntity dtoToEntity(ComercioDTO comercioDTO);
 	
-	public ComercioDTO entityTODto(ComercioEntity comercioEntity);
+	public ComercioDTO entityToDto(ComercioEntity comercioEntity);
 	
 	public List<ComercioDTO> listEntityToDto(List<ComercioEntity> comercioEntity);
 	

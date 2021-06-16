@@ -10,7 +10,7 @@ public interface IServicioMapper {
 	
 	public ServicioEntity dtoToEntity(ServicioDTO servicioDTO);
 	
-	public ServicioDTO entityTODto(ServicioEntity servicioEntity);
+	public ServicioDTO entityToDto(ServicioEntity servicioEntity);
 	
 	public List<ServicioDTO> listEntityToDto(List<ServicioEntity> servicioEntity);
 	

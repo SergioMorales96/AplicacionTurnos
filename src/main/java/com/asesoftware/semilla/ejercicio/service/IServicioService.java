@@ -1,19 +1,18 @@
 package com.asesoftware.semilla.ejercicio.service;
 
-import java.util.List;
-
-import com.asesoftware.semilla.ejercicio.entity.ServicioEntity;
+import com.asesoftware.semilla.ejercicio.dto.ResponseDTO;
+import com.asesoftware.semilla.ejercicio.dto.ServicioDTO;
 
 public interface IServicioService {
 
-	public List<ServicioEntity> getAll();
+	public ResponseDTO getAll();
 
-	public ServicioEntity getServicioById(Integer id);
+	public ResponseDTO getServicioById(Integer id);
 
-	public ServicioEntity createServicio(ServicioEntity servicioEntity);
+	public ResponseDTO createServicio(ServicioDTO servicioDTO);
 
-	public ServicioEntity updateServicio(ServicioEntity servicioEntity);
+	public ResponseDTO updateServicio(ServicioDTO servicioDTO);
 
-	public void deleteServicio(Integer id);
+	public ResponseDTO deleteServicio(Integer id);
 
 }

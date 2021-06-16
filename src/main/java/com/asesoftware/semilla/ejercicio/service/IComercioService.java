@@ -1,19 +1,18 @@
 package com.asesoftware.semilla.ejercicio.service;
 
-import java.util.List;
-
-import com.asesoftware.semilla.ejercicio.entity.ComercioEntity;
+import com.asesoftware.semilla.ejercicio.dto.ComercioDTO;
+import com.asesoftware.semilla.ejercicio.dto.ResponseDTO;
 
 public interface IComercioService {
 	
-	public List<ComercioEntity> getAll();
+	public ResponseDTO getAll();
 	
-	public ComercioEntity getComercioById(Integer id);
+	public ResponseDTO getComercioById(Integer id);
 	
-	public ComercioEntity createComercio(ComercioEntity comercioEntity);
+	public ResponseDTO createComercio(ComercioDTO comercioDTO);
 	
-	public ComercioEntity updateComercio(ComercioEntity comercioEntity);
+	public ResponseDTO updateComercio(ComercioDTO comercioDTO);
 	
-	public void deleteComercio(Integer id);
+	public ResponseDTO deleteComercio(Integer id);
 
 }

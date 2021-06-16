@@ -1,7 +1,5 @@
 package com.asesoftware.semilla.ejercicio.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.asesoftware.semilla.ejercicio.entity.ComercioEntity;
+import com.asesoftware.semilla.ejercicio.dto.ComercioDTO;
+import com.asesoftware.semilla.ejercicio.dto.ResponseDTO;
 import com.asesoftware.semilla.ejercicio.service.IComercioService;
 
 @RestController
@@ -23,7 +22,7 @@ public class ComercioController {
 	// Listar Todo
 	
 	@GetMapping(path = "/all")
-	public List<ComercioEntity> getAll(){
+	public ResponseDTO getAll(){
 		
 		return comercioService.getAll();
 	}
@@ -31,20 +30,20 @@ public class ComercioController {
 	// Listar Uno
 	
 	@GetMapping(path = "/comercio/{id}")
-	public ComercioEntity getComercioById(@PathVariable Integer id) {
+	public ResponseDTO getComercioById(@PathVariable Integer id) {
 		
 		return comercioService.getComercioById(id);
 	}
 	
 	@GetMapping(path = "/comercio")
-	public ComercioEntity getComercioParametroById(@RequestParam Integer id) {
+	public ResponseDTO getComercioParametroById(@RequestParam Integer id) {
 		
 		return comercioService.getComercioById(id);
 	}
 	// Crear 
 	
 	@PostMapping(path = "/crear", consumes = "application/json", produces = "application/json")
-	public ComercioEntity createComercio(@RequestBody ComercioEntity entity) {
+	public ResponseDTO createComercio(@RequestBody ComercioDTO entity) {
 		
 		return comercioService.createComercio(entity);
 	}
@@ -52,7 +51,7 @@ public class ComercioController {
 	// Editar
 	
 	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")
-	public ComercioEntity editarComercio(@RequestBody ComercioEntity entity) {
+	public ResponseDTO editarComercio(@RequestBody ComercioDTO entity) {
 		
 		return comercioService.updateComercio(entity);
 	}
@@ -60,9 +59,9 @@ public class ComercioController {
 	// Eliminar
 	
 	@GetMapping(path = "/delete/{id}")
-	public void eliminarComercio(@PathVariable Integer id) {
+	public ResponseDTO eliminarComercio(@PathVariable Integer id) {
 		
-		comercioService.deleteComercio(id);
+		return comercioService.deleteComercio(id);
 	}
 
 }

@@ -1,59 +1,76 @@
 package com.asesoftware.semilla.ejercicio.service;
 
-import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import com.asesoftware.semilla.ejercicio.dto.ResponseDTO;
+import com.asesoftware.semilla.ejercicio.dto.ServicioDTO;
 import com.asesoftware.semilla.ejercicio.entity.ServicioEntity;
+import com.asesoftware.semilla.ejercicio.mapper.IServicioMapper;
 import com.asesoftware.semilla.ejercicio.repository.IServicioRepository;
 
 @Service
 public class ServicioService implements IServicioService{
-	
+
 	@Autowired
 	private IServicioRepository servicioRepository;
-	
+
+	@Autowired
+	private IServicioMapper mapperServicio;
+
 	@Override
-	public List<ServicioEntity> getAll(){
-		
-		return servicioRepository.findAll();
-	}
-	
-	@Override
-	public ServicioEntity getServicioById(Integer id) {
-	
-		Optional<ServicioEntity> optional = servicioRepository.findById(id);
-		
-		if (optional.isPresent()) {
-			return optional.get();
-		}else {
-			return null;
-		}
-	}
-	
-	@Override
-	public ServicioEntity createServicio(ServicioEntity servicioEntity) {
-	
-		try {
-			return servicioRepository.save(servicioEntity);
-		}catch (Exception e) {
-			return null;
-		}
-		
-	}
-	
-	@Override
-	public ServicioEntity updateServicio(ServicioEntity servicioEntity) {
-	
-		return servicioRepository.save(servicioEntity);
+	public ResponseDTO getAll(){
+
+		return new ResponseDTO( mapperServicio.listEntityToDto( servicioRepository.findAll()), true, "ok", HttpStatus.OK);
 	}
 
 	@Override
-	public void deleteServicio(Integer id) {
-		// TODO Auto-generated method stub
-		servicioRepository.deleteById(id);
-		
+	public ResponseDTO getServicioById(Integer id) {
+
+		Optional<ServicioEntity> optional = servicioRepository.findById(id);
+
+		if (optional.isPresent()) {
+			return new ResponseDTO(optional.get(), true, "ok", HttpStatus.OK);
+		}else {
+			return  new ResponseDTO(null, false, "servicio no encontrado", HttpStatus.OK);
+		}
+	}
+
+	@Override
+	public ResponseDTO createServicio(ServicioDTO servicioDTO) {
+
+		try {
+			ServicioEntity servicioEntity = mapperServicio.dtoToEntity(servicioDTO);
+			servicioRepository.save(servicioEntity);
+			return new ResponseDTO(mapperServicio.entityToDto(servicioEntity), true, "ok", HttpStatus.OK);
+		}catch (Exception e) {
+			return new ResponseDTO(null, false, "No se puede crear el servicio", HttpStatus.OK);
+		}
+
+	}
+
+	@Override
+	public ResponseDTO updateServicio(ServicioDTO servicioDTO) {
+
+		ServicioEntity servicioEntity = mapperServicio.dtoToEntity(servicioDTO);
+		servicioRepository.save(servicioEntity);
+		return new ResponseDTO(mapperServicio.entityToDto(servicioEntity), true, "ok", HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseDTO deleteServicio(Integer id) {
+
+		try {
+
+			servicioRepository.deleteById(id);
+			return  new ResponseDTO(null, true, "servicio eliminado", HttpStatus.OK);
+
+		}catch (Exception e) {
+
+			return  new ResponseDTO(null, false, "el servicio no se puede eliminar", HttpStatus.OK); 
+		}
+
 	}
 
 }
