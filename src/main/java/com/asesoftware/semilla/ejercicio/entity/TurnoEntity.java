@@ -36,7 +36,7 @@ public class TurnoEntity {
 	private String estado;
 	
 	@Column(name = "fk_servicio")
-	private String turnoasociado;
+	private Integer turnoasociado;
 	
 
 }

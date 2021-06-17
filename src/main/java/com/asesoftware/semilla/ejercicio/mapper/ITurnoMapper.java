@@ -11,10 +11,10 @@ public interface ITurnoMapper {
 	
 	public TurnoEntity dtoToEntity(TurnoDTO turnoDTO);
 	
-	public TurnoDTO entityTODto(TurnoEntity turnoEntity);
+	public TurnoDTO entityToDto(TurnoEntity turnoEntity);
 	
 	public List<TurnoDTO> listEntityToDto(List<TurnoEntity> turnoEntity);
 	
-	public List<TurnoEntity> listdtoToEntity(List<TurnoDTO> turnoDTO);
+	public List<TurnoEntity> listDtoToEntity(List<TurnoDTO> turnoDTO);
 
 }
