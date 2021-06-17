@@ -21,7 +21,7 @@ public class ServicioDTO {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "America/New_York")
 	private Time duracion;
 	
-	private String servicioasociado;
+	private Integer servicioasociado;
 	
 	private List<TurnoDTO> turnos;
 

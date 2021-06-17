@@ -21,6 +21,6 @@ public class TurnoDTO {
 	
 	private String estado;
 	
-	private String turnoasociado;
+	private Integer turnoasociado;
 
 }

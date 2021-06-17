@@ -34,7 +34,7 @@ public class ServicioEntity {
 	private Time duracion;
 	
 	@Column(name = "fk_comercio")
-	private String servicioasociado;
+	private Integer servicioasociado;
 	
 	@OneToMany(mappedBy = "turnoasociado")
 	private List<TurnoEntity> turnos;
