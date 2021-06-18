@@ -1,5 +1,7 @@
 package com.asesoftware.semilla.ejercicio.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,8 @@ import com.asesoftware.semilla.ejercicio.service.IServicioService;
 @RequestMapping(path = "/api/v1/servicio")
 public class ServicioController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(ServicioController.class);
+	
 	@Autowired
 	private IServicioService servicioService;
 	
@@ -23,6 +27,7 @@ public class ServicioController {
 	
 	@GetMapping(path = "/all")
 	public ResponseDTO consultarTodos(){
+		logger.info("ingreso al metodo para consultar todos los servicios");
 		return servicioService.getAll();
 	}
 	
@@ -30,13 +35,13 @@ public class ServicioController {
 	
 	@GetMapping(path = "/servicio/{id}")
 	public ResponseDTO getServicioById(@PathVariable Integer id) {
-		
+		logger.info("ingreso al metodo para consultar un servicio");
 		return servicioService.getServicioById(id);
 	}
 	
 	@GetMapping(path = "/servicio")
 	public ResponseDTO getServicioParametroById(@RequestParam Integer id) {
-		
+		logger.info("ingreso al metodo para consultar un servicio de otra forma");
 		return servicioService.getServicioById(id);
 	}
 	
@@ -44,7 +49,7 @@ public class ServicioController {
 	
 	@PostMapping(path = "/crear", consumes = "application/json", produces = "application/json")
 	public ResponseDTO createServicio(@RequestBody ServicioDTO servicioDTO) {
-		
+		logger.info("ingreso al metodo para crear servicios");
 		return servicioService.createServicio(servicioDTO);
 	}
 	
@@ -52,7 +57,7 @@ public class ServicioController {
 	
 	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")
 	public ResponseDTO editarServicio(@RequestBody ServicioDTO servicioDTO) {
-		
+		logger.info("ingreso al metodo para editar servicios");
 		return servicioService.updateServicio(servicioDTO);
 	}
 	
@@ -60,7 +65,7 @@ public class ServicioController {
 	
 	@GetMapping(path = "/delete/{id}")
 	public ResponseDTO eliminarServicio(@PathVariable Integer id) {
-		
+		logger.info("ingreso al metodo para eliminar servicios");
 		return servicioService.deleteServicio(id);
 	}
 

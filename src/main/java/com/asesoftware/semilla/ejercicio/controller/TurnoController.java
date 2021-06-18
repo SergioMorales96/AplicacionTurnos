@@ -1,5 +1,7 @@
 package com.asesoftware.semilla.ejercicio.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,8 @@ import com.asesoftware.semilla.ejercicio.service.ITurnoService;
 @RequestMapping(path = "/api/v1/turno")
 public class TurnoController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(TurnoController.class);
+	
 	@Autowired
 	private ITurnoService turnoService;
 	
@@ -20,6 +24,7 @@ public class TurnoController {
 	
 	@GetMapping(path = "/servicio/{turnoasociado}")
 	public ResponseDTO consultarTurnoIdServicio(@PathVariable Integer turnoasociado) {
+		logger.info("ingreso al metodo para consultar turnos por id de servicio");
 		return turnoService.consultarTurnoIdServicio(turnoasociado);
 	}
 	
@@ -27,6 +32,7 @@ public class TurnoController {
 	
 	@GetMapping(path = "/servicio")
 	public ResponseDTO consultarTurnoNombreServicio(@RequestParam String nombreServicio) {
+		logger.info("ingreso al metodo para consultar turnos por nombre de servicio");
 		return turnoService.consultarTurnoNombreServicio(nombreServicio);
 	}
 	
@@ -34,6 +40,7 @@ public class TurnoController {
 	
 	@GetMapping(path = "/comercio/{id}")
 	public ResponseDTO consultarTurnoIdComercio(@PathVariable Integer id) {
+		logger.info("ingreso al metodo para consultar turnos por id de comercio");
 		return turnoService.consultarTurnoIdComercio(id);
 	}
 	
@@ -41,6 +48,7 @@ public class TurnoController {
 	
 	@GetMapping(path = "/comercio")
 	public ResponseDTO consultarTurnoNombreComercio(@RequestParam String nombreComercio) {
+		logger.info("ingreso al metodo para consultar turnos por nombre de comercio");
 		return turnoService.consultarTurnoNombreComercio(nombreComercio);
 	}
 
