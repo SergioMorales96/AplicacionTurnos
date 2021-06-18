@@ -36,5 +36,12 @@ public class TurnoController {
 	public ResponseDTO consultarTurnoIdComercio(@PathVariable Integer id) {
 		return turnoService.consultarTurnoIdComercio(id);
 	}
+	
+	// consultar turnos por nombre de comercio 
+	
+	@GetMapping(path = "/comercio")
+	public ResponseDTO consultarTurnoNombreComercio(@RequestParam String nombreComercio) {
+		return turnoService.consultarTurnoNombreComercio(nombreComercio);
+	}
 
 }
