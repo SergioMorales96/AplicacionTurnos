@@ -6,5 +6,6 @@ public interface ITurnoService {
 	
 	public ResponseDTO consultarTurnoIdServicio(Integer turnoasociado);
 	public ResponseDTO consultarTurnoNombreServicio(String nombreServicio);
+	public ResponseDTO consultarTurnoIdComercio(Integer id);
 
 }

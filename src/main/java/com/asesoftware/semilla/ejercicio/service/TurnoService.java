@@ -31,5 +31,11 @@ public class TurnoService implements ITurnoService{
 		List<TurnoDTO> lisTurnoDTOs = mapperTurno.listEntityToDto(turnoRepository.queryNombreServicioAsociado(nombreServicio));
 		return new ResponseDTO(lisTurnoDTOs, true, "ok", HttpStatus.OK);
 	}
+	
+	public ResponseDTO consultarTurnoIdComercio(Integer id) {
+		
+		List<TurnoDTO> lisTurnoDTOs = mapperTurno.listEntityToDto(turnoRepository.queryNombreComercioAsociado(id));
+		return new ResponseDTO(lisTurnoDTOs, true, "ok", HttpStatus.OK);
+	}
 
 }
